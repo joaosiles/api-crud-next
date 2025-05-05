@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     const connection = await connectToDatabase();
 
     // Execução da query para receber dados da tabela "User" 
-    const [rows] = await connection.execute('SELECT * FROM users WHERE id = 1', );
+    const [rows] = await connection.execute('SELECT * FROM users', );
 
     // Verificar se o usuário existe
     if (rows.length === 0) {
