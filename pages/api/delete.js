@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   }
 
   const { id } = req.body;
-console.log(req.body)
+  console.log(req.body)
   if (!id) {
     return res.status(400).json({ error: 'O id é obrigatório no request body.' });
   }
@@ -34,7 +34,7 @@ console.log(req.body)
     // Fecha conexão
     await connection.end();
 
-    // Check se foi deletado com sucesso
+    // Checa se foi deletado com sucesso
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'Usuário não encontrado.' });
     }
@@ -42,7 +42,7 @@ console.log(req.body)
     // Respostas de sucesso
     res.status(200).json({ message: 'Usuário deletado com sucesso!' });
   } catch (error) {
-    console.error('Error de conexão com o banco:', error);
+    console.error('Erro de conexão com o banco:', error);
     res.status(500).json({ error: 'Erro interno de servidor' });
   }
 }

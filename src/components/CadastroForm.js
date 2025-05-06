@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 const CadastroForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  // Removendo o estado da senha
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -59,8 +58,7 @@ const CadastroForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
-          {/* Removendo o campo de senha */}
+          </div>          
           <div className="flex items-center justify-between">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

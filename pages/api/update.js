@@ -25,7 +25,7 @@ export default async function handler(req, res) {
 
 
   try {
-    // Connect to the database
+    // Conecta no banco de dados
     const connection = await connectToDatabase();
 
     // Executa query para atualizar a tabela "users"
@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     // Fecha conexão com o banco
     await connection.end();
 
-    // Check se o update teve sucesso
+    // Checa se o update teve sucesso
     if (result.affectedRows === 0) {
       return res.status(404).json({ error: 'Usuário não encontrado.' });
     }
@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     // Resposta do server
     res.status(200).json({ message: 'Usuário atualizado com sucesso' });
   } catch (error) {
-    console.error('Error de conexão com o banco:', error);
+    console.error('Erro de conexão com o banco:', error);
     res.status(500).json({ error: 'Erro interno de servidor' });
   }
 }

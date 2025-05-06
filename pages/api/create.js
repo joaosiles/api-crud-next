@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     // Encerra conexão
     await connection.end();
 
-    // Respond with the user data
+    // Respond com os dados do usuário
     res.status(201).json({ id: result.insertId, message: 'Usuário criado com sucesso!' });
   } catch (error) {
     console.error('Error de conexão com o banco:', error);
